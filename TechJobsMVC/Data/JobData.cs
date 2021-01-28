@@ -216,7 +216,7 @@ namespace TechJobsMVC.Data
             // Loop through the row string one char at a time
             foreach (char c in row.ToCharArray())
             {
-                if ((c == fieldSeparator && !isBetweenQuotes))
+                if (c == fieldSeparator && !isBetweenQuotes)
                 {
                     rowValues.Add(valueBuilder.ToString());
                     valueBuilder.Clear();
