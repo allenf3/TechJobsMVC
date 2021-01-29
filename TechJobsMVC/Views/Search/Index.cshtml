@@ -4,16 +4,14 @@
 
     <form action="/search/results" method="post">
         <h2>Search by:</h2>
-
         <p>
             @foreach (var column in ViewBag.columns)
             {
                 <span>
                     <input type="radio" name="searchType" id="@column.Key" value="@column.Key" checked="@column.Key == 'all'" />
                     <label for="@column.Key">@column.Value</label>
-                </span>
+                </span> 
             }
-
         </p>
 
         <p>
@@ -25,9 +23,8 @@
     </form>
 
     <hr />
-
-    @{
-        //TODO #4: Loop over the search results to display all job fields.
-    }
-
+    @if (ViewBag.jobs != null)
+    {
+        <partial name="/Views/Shared/_DisplayJobsPartial.cshtml" />
+     }
 </div>
