@@ -8,26 +8,27 @@
 <table class="job-listing">
     @foreach (var job in ViewBag.jobs)
     {
-<tr>
-    <td>
-        <p>ID: @job.Id</p>
-        <p>Name: @job.Name</p>
-        <p>Employer: <a asp-controller="Search" 
-                        asp-action="Results" 
-                        asp-route-searchType="employer"
-                        asp-route-searchTerm="@job.Employer">@job.Employer</a></p>
-        <p>Location: <a asp-controller="Search"
-                        asp-action="Results"
-                        asp-route-searchType="location"
-                        asp-route-searchTerm="@job.Location">@job.Location</a></p>
-        <p>Position Type: <a asp-controller="Search"
+        <tr>
+            <td>
+                <p>ID: @job.Id</p>
+                <p>Name: @job.Name</p>
+                <p>Employer: <a asp-controller="Search" 
+                                asp-action="Results" 
+                                asp-route-searchType="employer"
+                                asp-route-searchTerm="@job.Employer">@job.Employer</a></p>
+                <p>Location: <a asp-controller="Search"
+                                asp-action="Results"
+                                asp-route-searchType="location"
+                                asp-route-searchTerm="@job.Location">@job.Location</a></p>
+                <p>Position Type: <a asp-controller="Search"
+                                     asp-action="Results"
+                                     asp-route-searchType="positionType"
+                                     asp-route-searchTerm="@job.PositionType">@job.PositionType</a></p>
+                <p>Skill: <a asp-controller="Search"
                              asp-action="Results"
-                             asp-route-searchType="positionType"
-                             asp-route-searchTerm="@job.PositionType">@job.PositionType</a></p>
-        <p>Skill: <a asp-controller="Search"
-                     asp-action="Results"
-                     asp-route-searchType="skill"
-                     asp-route-searchTerm="@job.CoreCompetency">@job.CoreCompetency</a></p>
-    </td>
-</tr>}
+                             asp-route-searchType="skill"
+                             asp-route-searchTerm="@job.CoreCompetency">@job.CoreCompetency</a></p>
+            </td>
+        </tr>
+    }
 </table>
